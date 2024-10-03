@@ -1,10 +1,41 @@
 "use client";
 
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Image from "next/image";
 import "swiper/css";
+import InsideSwiper from "./InsideSwiper";
+
+const slides = [
+  {
+    id: 1,
+    imgSrc: "/images/slide-1.jpg",
+    header: "About us",
+    subHeader: "We Are a Mid-Tier Menswear Company Aming For The 20-35 Market",
+    buttonText: "Discover more",
+  },
+  {
+    id: 2,
+    imgSrc: "/images/slide-2.jpg",
+    header: "About us",
+    subHeader: "We Are a Mid-Tier Menswear Company Aming For The 20-35 Market",
+    buttonText: "Discover more",
+  },
+  {
+    id: 3,
+    imgSrc: "/images/slide-3.jpg",
+    header: "About us",
+    subHeader: "We Are a Mid-Tier Menswear Company Aming For The 20-35 Market",
+    buttonText: "Discover more",
+  },
+  {
+    id: 4,
+    imgSrc: "/images/slide-4.jpg",
+    header: "About us",
+    subHeader: "We Are a Mid-Tier Menswear Company Aming For The 20-35 Market",
+    buttonText: "Discover more",
+  },
+];
 
 export default function MainSwiper() {
   return (
@@ -18,18 +49,11 @@ export default function MainSwiper() {
       autoplay={{ delay: 3000 }}
       loop={true}
     >
-      <SwiperSlide>
-        <Image fill={true} src="/images/slide-1.jpg" alt='slide' className="w-full h-full object-cover" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image fill={true} src="/images/slide-2.jpg" alt='slide' className="w-full h-full object-cover" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image fill={true} src="/images/slide-3.jpg" alt='slide' className="w-full h-full object-cover" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image fill={true} src="/images/slide-4.jpg" alt='slide' className="w-full h-full object-cover" />
-      </SwiperSlide>
+      {slides.map((slide) => (
+        <SwiperSlide key={slide.id} className="w-full h-full">
+          <InsideSwiper {...slide} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

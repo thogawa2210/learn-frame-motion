@@ -1,16 +1,11 @@
+import { Playfair_Display } from "@next/font/google";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const playfair = Playfair_Display({
+  weight: ["400", "700"], // You can choose the weights you need
+  subsets: ["latin"], // Specify the language subset
+  display: "swap", // Ensures text is visible while the font loads
 });
 
 export const metadata: Metadata = {
@@ -25,11 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={playfair.className}>{children}</body>
     </html>
   );
 }
