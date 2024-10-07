@@ -1,7 +1,7 @@
 import Header from "../Header";
 import MainSwiper from "../MainSwiper";
 import OurServices from "../OurServices";
-import Test from "../Test";
+import WhyUs from "../WhyUs";
 
 export default function Main() {
   return (
@@ -12,7 +12,7 @@ export default function Main() {
 
       <OurServices />
 
-      <Test />
+      <WhyUs />
     </div>
   );
 }

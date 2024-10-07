@@ -25,7 +25,7 @@ const features = [
 export default function OurServices() {
   return (
     <div className="mt-10">
-      <div className="w-full flex items-center justify-center m-5 text-4xl">
+      <div className="w-full flex items-center justify-center m-5 text-4xl font-bold">
         Our Services
       </div>
       <div className="flex justify-center gap-8">
