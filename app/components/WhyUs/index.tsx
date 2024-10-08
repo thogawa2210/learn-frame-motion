@@ -1,4 +1,32 @@
-import ImageCard from "@/components/ui/imagecard";
+import ImageCard, { IImageCardProps } from "@/components/ui/imagecard";
+import { randomUUID } from "crypto";
+
+const whyusItems: IImageCardProps[] = [
+  {
+    imgSrc: "/images/whyus-1.png",
+    title: "Lorem Ipsum",
+    content:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  },
+  {
+    imgSrc: "/images/whyus-2.png",
+    title: "Lorem Ipsum",
+    content:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  },
+  {
+    imgSrc: "/images/whyus-3.png",
+    title: "Lorem Ipsum",
+    content:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  },
+  {
+    imgSrc: "/images/whyus-4.png",
+    title: "Lorem Ipsum",
+    content:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  },
+];
 
 export default function WhyUs() {
   return (
@@ -7,10 +35,9 @@ export default function WhyUs() {
         Why us?
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <ImageCard imgSrc="/images/whyus-1.png" />
-        <ImageCard imgSrc="/images/whyus-2.png" />
-        <ImageCard imgSrc="/images/whyus-3.png" />
-        <ImageCard imgSrc="/images/whyus-4.png" />
+        {whyusItems.map((item) => (
+          <ImageCard key={randomUUID()} {...item} />
+        ))}
       </div>
     </div>
   );

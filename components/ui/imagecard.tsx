@@ -1,3 +1,4 @@
+import ScaleInView from "@/app/components/ScaleInView";
 import {
   Card,
   CardContent,
@@ -9,7 +10,7 @@ import {
 import Image from "next/image";
 import { ReactNode } from "react";
 
-interface IImageCardProps {
+export interface IImageCardProps {
   imgSrc: string;
   width?: number;
   height?: number;
@@ -28,7 +29,8 @@ export default function ImageCard({
 }: IImageCardProps) {
   return (
     <Card className="max-w-sm border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
+      {/* <a href="#"> */}
+      <ScaleInView>
         <Image
           className="rounded-t-lg"
           src={imgSrc}
@@ -36,7 +38,8 @@ export default function ImageCard({
           width={width}
           height={height}
         />
-      </a>
+      </ScaleInView>
+      {/* </a> */}
       <CardContent className="p-5">
         <a href="#">
           <CardHeader>
