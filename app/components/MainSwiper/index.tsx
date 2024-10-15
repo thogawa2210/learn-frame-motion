@@ -45,13 +45,15 @@ export default function MainSwiper() {
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-      style={{ width: "100vw", height: "100vh" }}
+      style={{ width: "100vw", height: "auto" }}
       autoplay={{ delay: 3000 }}
       loop={true}
     >
       {slides.map((slide) => (
-        <SwiperSlide key={slide.id} className="w-full h-full">
-          <InsideSwiper {...slide} />
+        <SwiperSlide key={slide.id} className="w-full">
+          <div className="relative aspect-[16/9] w-full h-auto">
+            <InsideSwiper {...slide} />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
