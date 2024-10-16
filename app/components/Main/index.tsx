@@ -1,3 +1,4 @@
+import Contact from "../Contact";
 import Header from "../Header";
 import MainSwiper from "../MainSwiper";
 import OurServices from "../OurServices";
@@ -13,6 +14,8 @@ export default function Main() {
       <OurServices />
 
       <WhyUs />
+
+      <Contact />
     </div>
   );
 }
