@@ -28,7 +28,8 @@ export default function OurServices() {
       <div className="w-full flex items-center justify-center m-5 text-4xl font-bold">
         Our Services
       </div>
-      <div className="flex justify-center gap-8">
+      {/* Responsive grid layout */}
+      <div className="grid gap-8 justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <Card key={index} className="text-center max-w-sm">
             <div className="relative overflow-hidden group">

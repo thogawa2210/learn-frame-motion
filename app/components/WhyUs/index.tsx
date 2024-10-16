@@ -32,8 +32,9 @@ export default function WhyUs() {
   return (
     <div className="container mx-auto p-4">
       <div className="text-4xl font-bold w-full flex items-center justify-center py-5">
-        Why us?
+        Why Us?
       </div>
+      {/* Responsive grid layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {whyusItems.map((item) => (
           <ImageCard key={randomUUID()} {...item} />
